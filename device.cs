@@ -10,6 +10,7 @@ namespace QuanLyThietBi
         UnderMaintenance,
         Retired
     }
+    
     public abstract class Device
     {
         // Các thuộc tính chung
