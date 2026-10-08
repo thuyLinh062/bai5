@@ -1,3 +1,5 @@
+//Họ và Tên: Trần Thùy Linh
+//MSSV: 202418935
 using System;
 
 namespace QuanLyThietBi
@@ -99,6 +101,49 @@ namespace QuanLyThietBi
             }
 
             return devices;
+        }
+
+        //In thiết bị danh sách thiết bị của phòng
+
+        public void PrintLabRoomDevices()
+        {
+            Console.WriteLine($"=== Danh sách thiết bị phòng {RoomName} ({RoomId}) ===");
+
+            // Kiểm tra nếu phòng chưa có thiết bị nào
+            if (Device == null || Device.Count == 0)
+            {
+                Console.WriteLine("  (Phòng hiện chưa có thiết bị nào)");
+                return;
+            }
+            
+            int stt = 1;
+            foreach (Device dev in Device)
+            {
+                Console.WriteLine($"  {stt++}. {dev}");
+                Console.WriteLine();
+            }
+        }
+
+        // In ra danh sách các thiết bị cần bảo trì trong phòng
+        public void PrintDevicesNeedingMaintenance()
+        {
+            Console.WriteLine($"--- Danh sách thiết bị cần bảo trì tại phòng {RoomName} ({RoomId}) ---");
+
+            // Lấy danh sách thiết bị cần bảo trì
+            List<Device> list = GetDevicesRequiringMaintenance();
+
+            if (list.Count == 0)
+            {
+                Console.WriteLine("  (Không có thiết bị nào cần bảo trì)");
+                return;
+            }
+
+            int stt = 1;
+            foreach (Device dev in list)
+            {
+                Console.WriteLine($"  {stt++}. {dev}");
+                Console.WriteLine();
+            }
         }
     }
 }

@@ -1,3 +1,5 @@
+//Họ và Tên: Trần Thùy Linh
+//MSSV: 202418935
 using System;
 
 namespace QuanLyThietBi
@@ -24,11 +26,11 @@ namespace QuanLyThietBi
         
         public override decimal CalculateAnnualMaintenanceCost()
         {
-            decimal cost = CostPrice;
+            decimal cost = CostPrice * 0.03m;
 
             if(LampHours > 3000)
             {
-                cost += 1500000;
+                cost += 1500000m;
             }
 
             return cost;
